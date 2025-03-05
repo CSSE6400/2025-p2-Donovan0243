@@ -28,4 +28,4 @@ Content-Type: application/json
 }
 
 ### Delete a Todo
-DELETE {{baseUrl}}/api/v1/todos/1
+DELETE {{baseUrl}}/api/v1/todos/2
