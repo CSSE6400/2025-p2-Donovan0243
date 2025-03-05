@@ -2,13 +2,15 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # app == Flask framework
-def create_app():
+def create_app(config_overrides=None):
     app = Flask(__name__)  # Initialize the Flask application
 
 
 # 1. db configuration 
     # Configure the SQLite database URI (file-based storage)
     app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite"
+    if config_overrides:
+        app.config.update(config_overrides)
 
     # Load the models and initialize the database
     from todo.models import db
